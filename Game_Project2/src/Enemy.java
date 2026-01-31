@@ -72,6 +72,12 @@ public class Enemy {
 
 
 
+    public void setHP(int hp) {
+        this.hp = Math.max(0, hp);
+    }
+
+
+
     //public void getMove(){
 
         //if (this.hp < 20 && myItem != null){

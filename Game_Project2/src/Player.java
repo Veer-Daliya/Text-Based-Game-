@@ -68,7 +68,7 @@ public class Player {
 
     public void setHp(int hp)
     {
-        this.hp = hp;
+        this.hp = Math.max(0, hp);
     }
 
 
@@ -92,7 +92,7 @@ public class Player {
             if (this.hp > this.maxHp) {
                 this.hp = this.maxHp;
             }
-            System.out.println(this.name + " has healed " + myItem.getHealAmount() +" HP");
+            System.out.println(this.name + " has healed " + myItem.getHealAmount() +" HP" + " and now has " + this.hp + "/" + this.maxHp + " HP");
             myItem = null;
         }
         else {
@@ -100,7 +100,6 @@ public class Player {
         }
 
     }
-
 
 
 

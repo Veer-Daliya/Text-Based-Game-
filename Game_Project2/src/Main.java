@@ -43,26 +43,37 @@ public class Main {
             else if (input.equals("attack")){
 
                 player1.attack(enemy);
-                System.out.println(player1.getName() + " attacked " + enemy.getName() + "!");
+                int playerDamage = player1.getAttack() + player1.getWeapon().getDamage();
+                System.out.println(player1.getName() + " attacked " + enemy.getName() + " and dealt " + playerDamage + " damage!");
 
 
                 if(!enemy.isAlive()){
                 System.out.println (enemy.getName() + " has been defeated" );
+                break;
                 }
                 else {
                 System.out.println (enemy.getName() + " has survived");
                 }
 
+
+
                 enemy.attack(player1);
-                System.out.println(enemy.getName() + " attacked " + player1.getName() + "!");
+                int enemyDamage = enemy.getAttack() + enemy.getWeapon().getDamage();
+                System.out.println("\n" + enemy.getName() + " attacked " + player1.getName() + " and dealt " + enemyDamage + " damage!");
+
 
                 if(!player1.isAlive()){
                 System.out.println (player1.getName() + " has survived");
+                break;
                 }
-
                 else {
                 System.out.println (player1.getName() + " has survived");
                 }
+
+                System.out.println("\n" + "Player: " + player1.getName() + "  " + "HP: " + player1.getHp() + "/" + player1.getMaxHp());
+                System.out.println("Enemy: " + enemy.getName() + "  " + "HP: " + enemy.getHp() + "/" + enemy.getMaxHp()) ;
+
+
 
             }
 
